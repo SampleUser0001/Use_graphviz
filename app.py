@@ -9,7 +9,7 @@ class Code(Enum):
 # Graphvizのオブジェクトを作成
 dot = graphviz.Digraph(format='png')
 
-# ノードを3つ作成
+# ノードを4つ作成
 dot.node(Code.A.name, 'A')
 dot.node(Code.B.name, 'B')
 dot.node(Code.C.name, 'C')
@@ -22,5 +22,5 @@ dot.edge(Code.B.name, Code.C.name)
 dot.edge(Code.D.name, Code.C.name)
 
 # 表示
-dot.view()  # `dot`オブジェクトで`view`メソッドを呼び出す
-
+# dot.view()  # `dot`オブジェクトで`view`メソッドを呼び出す
+dot.render('graph')  # 画像を保存
